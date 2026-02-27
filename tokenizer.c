@@ -11,7 +11,7 @@ void tokenize_input(char user_input[100])
     
     while (token != NULL)
     {   
-        printf("Index: %d \t|\t Value: %s\n", index, token);
+        printf("\tIndex: %d \t|\t Value: %s\n", index, token);
         index ++;
         token = strtok(NULL, " ");
     }
@@ -40,5 +40,6 @@ void get_input(void)
 int main(void)
 {
     get_input();
+    printf("\n");
     return 0;
 }
