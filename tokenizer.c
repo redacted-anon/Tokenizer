@@ -4,6 +4,15 @@
 #include <stdlib.h>
 
 
+void clear_screen(void)
+{
+    #ifdef _WIN32
+        system("cls");
+    #else 
+        system("clear");
+    #endif    
+}
+
 void tokenize_input(char user_input[100])
 {
     int index = 0;
@@ -30,20 +39,11 @@ void get_input(void)
 
         if (strcmp(s, "exit") == 0)
         {
-            #ifdef _WIN32
-                system("cls");
-            #else 
-                system("clear");
-            #endif
-            
+            clear_screen();
             exit(EXIT_SUCCESS);
         } else if (strcmp(s, "clear") == 0)
         {
-            #ifdef _WIN32
-                system("cls");
-            #else 
-                system("clear");
-            #endif
+            clear_screen();
         } else
         {
             printf("\n");
