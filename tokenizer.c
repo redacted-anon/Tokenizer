@@ -13,6 +13,7 @@ void clear_screen(void)
     #endif    
 }
 
+
 void tokenize_input(char user_input[100])
 {
     int index = 0;
