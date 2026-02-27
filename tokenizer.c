@@ -31,6 +31,7 @@ void get_input(void)
         exit(EXIT_SUCCESS);
     } else
     {
+        printf("\n");
         tokenize_input(s);
     }
 }
