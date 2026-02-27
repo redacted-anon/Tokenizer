@@ -30,8 +30,20 @@ void get_input(void)
 
         if (strcmp(s, "exit") == 0)
         {
-            printf("\n");
+            #ifdef _WIN32
+                system("cls");
+            #else 
+                system("clear");
+            #endif
+            
             exit(EXIT_SUCCESS);
+        } else if (strcmp(s, "clear") == 0)
+        {
+            #ifdef _WIN32
+                system("cls");
+            #else 
+                system("clear");
+            #endif
         } else
         {
             printf("\n");
