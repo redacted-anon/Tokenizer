@@ -22,17 +22,21 @@ void get_input(void)
 {
     char s[100];
 
-    printf("\nEnter some text (type 'exit' to end the program): ");
-    fgets(s, sizeof(s), stdin);
-    s[strcspn(s, "\n")] = '\0';
+    while (true)
+    {
+        printf("\nEnter some text (type 'exit' to end the program): ");
+        fgets(s, sizeof(s), stdin);
+        s[strcspn(s, "\n")] = '\0';
 
-    if (strcmp(s, "exit") == 0)
-    {
-        exit(EXIT_SUCCESS);
-    } else
-    {
-        printf("\n");
-        tokenize_input(s);
+        if (strcmp(s, "exit") == 0)
+        {
+            printf("\n");
+            exit(EXIT_SUCCESS);
+        } else
+        {
+            printf("\n");
+            tokenize_input(s);
+        }
     }
 }
 
